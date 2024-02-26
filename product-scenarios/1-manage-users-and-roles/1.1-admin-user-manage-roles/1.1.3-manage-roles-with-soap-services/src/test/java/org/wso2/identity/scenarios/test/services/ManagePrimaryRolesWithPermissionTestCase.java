@@ -157,6 +157,15 @@ public class ManagePrimaryRolesWithPermissionTestCase extends ScenarioTestBase {
             userManagementClient.addRole(roleName, userList, permissions);
         } catch (Exception e) {
             LOG.error("Error while adding the role. ", e);
+            LOG.error("Logging the error message.");
+            LOG.error(e.getMessage());
+
+            LOG.error("Logging the exception");
+            LOG.error(e.toString());
+
+            LOG.error("Logging the stack trace");
+            LOG.error(e.getStackTrace().toString());
+
             return false;
         }
         return true;
