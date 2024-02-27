@@ -264,7 +264,9 @@ public class TestPassiveSTS extends ScenarioTestBase {
         assertTrue(resultPage.contains("urn:oasis:names:tc:SAML:1.0:assertion"), "Passive STS " +
                 "Login response doesn't have SAMLAssertion for: " + this.config);
         EntityUtils.consume(response.getEntity());
-        testPassiveSTSClaims();
+        // Temporarily disabling the below test due to claims not getting populated in the sample app
+        // due to a known issue: https://github.com/wso2/product-is/issues/19423
+        // testPassiveSTSClaims();
     }
 
     private void testPassiveSTSClaims() {
